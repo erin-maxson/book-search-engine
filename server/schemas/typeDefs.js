@@ -5,17 +5,17 @@ const typeDefs = gql`
     _id: ID
     username: String
     email: String
-    bookCount: String
-    savedBooks: [Book]!
+    bookCount: Int
+    savedBooks: [Book]
   }
 
   type Book {
-    bookId: ID
-    authors: [String, String]
-    description: String
-    title: String
-    image:
-    link:
+    bookId: String!
+    authors: [String]
+    description: String!
+    title: String!
+    image: String
+    link: String
   }
 
   type Auth {
@@ -24,10 +24,6 @@ const typeDefs = gql`
   }
 
   type Query {
-    me: [User]
-    user(username: String!): User
-    thoughts(username: String): [Thought]
-    thought(thoughtId: ID!): Thought
     me: User
   }
 
